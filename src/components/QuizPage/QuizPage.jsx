@@ -1,31 +1,21 @@
 import React from "react";
-import { useMultistep } from "../../Hooks/useMultiStep";
-import Button from "../Button";
+import styles from "./Quizpage.module.css";
 
-export default function QuizPage() {
-  const { steps, step, currentStepIndex, isFirstStep, isLastStep, next, back } =
-    useMultistep([<div>One</div>, <div>Two</div>, <div>Three</div>]);
-
-  function onSubmit(e) {
-    e.preventDefault();
-    if (!isLastStep) return next();
-    alert("Successful Account Creation");
-  }
-
+export default function QuizPage({ question, options, children }) {
   return (
     <>
-      <form onSubmit={onSubmit}>
-        <div style={{ position: "absolute", top: ".5rem", right: ".5rem" }}>
-          {currentStepIndex + 1} / {steps.length}
+      <div className={styles.quizpage}>
+        <div className={styles.quizQuestion}>{question}</div>
+        <div className={styles.options}>
+          {options.map((option) => {
+            return (
+              <>
+                <div className={styles.quizOption}> {option}</div>
+              </>
+            );
+          })}
         </div>
-        {step}
-        <Button
-          next={next}
-          isLastStep={isLastStep}
-          isFirstStep={isFirstStep}
-          back={back}
-        />
-      </form>
+      </div>
     </>
   );
 }

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Quizpage.module.css";
 
-export default function QuizPage({ question, options, children }) {
+export default function QuizPage({ question, options, updateFields, id }) {
+  const ans = `answer${id}`;
   return (
     <>
       <div className={styles.quizpage}>
@@ -9,9 +10,15 @@ export default function QuizPage({ question, options, children }) {
         <div className={styles.options}>
           {options.map((option) => {
             return (
-              <>
-                <div className={styles.quizOption}> {option}</div>
-              </>
+              <div
+                className={styles.quizOption}
+                key={option}
+                onClick={() => {
+                  updateFields({ [id]: option });
+                }}
+              >
+                {option}
+              </div>
             );
           })}
         </div>

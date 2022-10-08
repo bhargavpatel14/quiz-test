@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Button({ back, isFirstStep, next }) {
+export default function Button({ back, isFirstStep, isLastStep, next }) {
   return (
     <div
       style={{
@@ -15,9 +15,7 @@ export default function Button({ back, isFirstStep, next }) {
           Back
         </button>
       )}
-      <button type="submit" onClick={next}>
-        Next
-      </button>
+      <button type="submit">{isLastStep ? "Finish" : "Next"}</button>
     </div>
   );
 }

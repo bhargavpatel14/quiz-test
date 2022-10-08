@@ -1,21 +1,17 @@
 import React from "react";
+import styles from "./Button.module.css";
 
 export default function Button({ back, isFirstStep, isLastStep, next }) {
   return (
-    <div
-      style={{
-        marginTop: "1rem",
-        display: "flex",
-        gap: ".5rem",
-        justifyContent: "flex-end",
-      }}
-    >
+    <div className={styles.buttonContainer}>
       {!isFirstStep && (
-        <button type="button" onClick={back}>
+        <button className={styles.button} type="button" onClick={back}>
           Back
         </button>
       )}
-      <button type="submit">{isLastStep ? "Finish" : "Next"}</button>
+      <button className={styles.button} type="submit">
+        {isLastStep ? "Finish" : "Next"}
+      </button>
     </div>
   );
 }

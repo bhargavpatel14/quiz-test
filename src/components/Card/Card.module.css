@@ -1,16 +1,20 @@
 .card {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  margin: 10px;
+  border: 3px solid black;
+  background: aquamarine;
+  margin: 150px;
 }
 .cardHeader {
   background-color: #376678;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 40px;
   padding: 12px 40px;
   color: #ffffff;
   text-align: center;
+}
+.card:hover {
+  transform: translate3d(0, -10px, 22px);
 }

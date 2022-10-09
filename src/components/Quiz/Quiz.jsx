@@ -57,7 +57,14 @@ export default function Quiz({ quizquestions }) {
     <>
       <div>
         <form onSubmit={onSubmit}>
-          <div style={{ position: "absolute", top: ".5rem", right: ".5rem" }}>
+          <div
+            style={{
+              textAlign: "center",
+              fontSize: "30px",
+              top: ".5rem",
+              right: "10rem",
+            }}
+          >
             {currentStepIndex + 1} / {steps.length}
           </div>
           {step}

@@ -1,0 +1,16 @@
+.card {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: 10px;
+}
+.cardHeader {
+  background-color: #376678;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 12px 40px;
+  color: #ffffff;
+  text-align: center;
+}
